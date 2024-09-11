@@ -2,7 +2,10 @@ EMACS=	emacs
 INSTALL=install -m 644 -p
 RM=	rm -f
 
-ELCS=	pg.elc
+ELCS=	pg.elc \
+	pg-geometry.elc \
+	pg-gis.elc \
+	pg-lo.elc
 
 .SUFFIXES: .el .elc
 
