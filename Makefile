@@ -1,11 +1,13 @@
 EMACS=	emacs
 INSTALL=install -m 644 -p
+MKDIR=	mkdir -p
 RM=	rm -f
 
 ELCS=	pg.elc \
 	pg-geometry.elc \
 	pg-gis.elc \
 	pg-lo.elc
+ELISPDIR!=	${EMACS} -Q --batch --eval "(princ (expand-file-name \"../../site-lisp/pg\" data-directory))"
 
 .SUFFIXES: .el .elc
 
@@ -15,7 +17,8 @@ ELCS=	pg.elc \
 all: ${ELCS}
 
 install: ${ELCS}
-	${INSTALL} *.el* $$(${EMACS} -Q --batch --eval "(princ (expand-file-name \"../../site-lisp\" data-directory))")
+	${MKDIR} ${ELISPDIR}
+	${INSTALL} *.el* ${ELISPDIR}
 
 clean:
 	${RM} ${ELCS}
