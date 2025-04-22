@@ -4,6 +4,7 @@ MKDIR=	mkdir -p
 RM=	rm -f
 
 ELCS=	pg.elc \
+	pg-bm25.elc \
 	pg-geometry.elc \
 	pg-gis.elc \
 	pg-lo.elc
